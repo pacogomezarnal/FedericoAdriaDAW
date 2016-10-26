@@ -5,3 +5,7 @@ gestor_homepage:
 all_empresa:
     path:     /empresa/all
     defaults: { _controller: gestorBundle:empresa:all }
+
+empresa_crear:
+    path:     /empresa/new
+    defaults: { _controller: gestorBundle:empresa:crearEmpresa }
