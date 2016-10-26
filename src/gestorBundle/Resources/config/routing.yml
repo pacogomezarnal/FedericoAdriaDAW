@@ -9,3 +9,11 @@ all_empresa:
 empresa_crear:
     path:     /empresa/new
     defaults: { _controller: gestorBundle:empresa:crearEmpresa }
+
+empresa_nueva:
+    path:     /empresa/nueva
+    defaults: { _controller: gestorBundle:empresa:nuevaEmpresa }
+
+empresa_msgExito:
+    path:     /empresa/msgExito
+    defaults: { _controller: gestorBundle:empresa:msgExito }
