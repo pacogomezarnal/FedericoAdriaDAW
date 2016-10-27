@@ -6,12 +6,12 @@ all_empresa:
     path:     /empresa/all
     defaults: { _controller: gestorBundle:empresa:all }
 
-empresa_crear:
-    path:     /empresa/new
-    defaults: { _controller: gestorBundle:empresa:crearEmpresa }
+#empresa_crear:
+ #   path:     /empresa/new
+ #   defaults: { _controller: gestorBundle:empresa:crearEmpresa }
 
 empresa_nueva:
-    path:     /empresa/nueva
+    path:     /empresa/new
     defaults: { _controller: gestorBundle:empresa:nuevaEmpresa }
 
 empresa_msgExito:

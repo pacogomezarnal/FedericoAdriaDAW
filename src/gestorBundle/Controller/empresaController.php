@@ -17,7 +17,7 @@ class empresaController extends Controller
         return $this->render('gestorBundle:empresa:all.html.twig',array("empresas"=>$empresas));
     }
 
-    public function crearEmpresaAction()
+   /* public function crearEmpresaAction()
     {
     	//Nuevo objeto de tipo Empresa
     	$empresa = new empresa();
@@ -33,6 +33,7 @@ class empresaController extends Controller
     	$mangDoct->flush($empresa);
     	return $this->render('gestorBundle:empresa:crearEmpresa.html.twig',array("empresaId"=>$empresa->getId()));
     }
+    */
 
     public function nuevaEmpresaAction(Request $request)//cambiar esto por la URL que queramos
     {
@@ -51,7 +52,7 @@ class empresaController extends Controller
     		$em->persist($empresa);
     		$em->flush();
 
-    		//return $this->redirectToRoute('/empresa/msgExito');//no va
+    		return $this->redirectToRoute('empresa_msgExito');
     	}
     	return $this->render('gestorBundle:empresa:nuevaEmpresa.html.twig',array("form"=>$form->createView() ));
     }
