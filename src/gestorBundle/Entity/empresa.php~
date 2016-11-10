@@ -221,45 +221,5 @@ class empresa
     {
         return $this->fechaCreacion;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->alumnos = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add alumno
-     *
-     * @param \gestorBundle\Entity\alumnos $alumno
-     *
-     * @return empresa
-     */
-    public function addAlumno(\gestorBundle\Entity\alumnos $alumno)
-    {
-        $this->alumnos[] = $alumno;
-
-        return $this;
-    }
-
-    /**
-     * Remove alumno
-     *
-     * @param \gestorBundle\Entity\alumnos $alumno
-     */
-    public function removeAlumno(\gestorBundle\Entity\alumnos $alumno)
-    {
-        $this->alumnos->removeElement($alumno);
-    }
-
-    /**
-     * Get alumnos
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAlumnos()
-    {
-        return $this->alumnos;
-    }
 }
+
