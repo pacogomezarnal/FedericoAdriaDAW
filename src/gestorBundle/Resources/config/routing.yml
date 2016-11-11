@@ -17,3 +17,7 @@ empresa_nueva:
 empresa_msgExito:
     path:     /empresa/msgExito
     defaults: { _controller: gestorBundle:empresa:msgExito }
+
+alumnosAll:
+  path:       /alumno/all
+  defaults: { _controller: gestorBundle:alumno:alumnosAll }

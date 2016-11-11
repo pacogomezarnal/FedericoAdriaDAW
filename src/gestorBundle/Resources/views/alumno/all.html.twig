@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Todos los alumnos</title>
+		<meta charset="UTF-8">
+		<link href="{{ asset('/css/estilos.css') }}" rel="stylesheet" />
+		<link href="{{ asset('/css/menu.css') }}" rel="stylesheet" />
+		<link href="{{ asset('/css/grid12.css') }}" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="col">
+
+		<div class="col-md-3">
+			<div>
+  	<div id="cabecera">
+   	 <h1>fct</h1>
+   		 Gestor de prácticas en empresa
+  	</div>
+  
+  	<div id="principal">
+    <h3>Principal</h3>
+    <div>Listado de asignaciones</div>
+        <div>Asignación</div>
+    <h3>Maestros</h3>
+		<div id="empresa">Empresa</div>
+    		<ul>
+      			<li>ListadoEmpresas</li>
+      			<li>NuevaEmpresa</li>
+		   </ul>
+				<div>Alumnos</div>
+    		<ul>
+      			<li>ListadoAlumnos</li>
+    		</ul>
+				<div>Tutores</div>
+
+        		<h3>Recursos</h3>
+				  <div>Recursos</div>
+
+  				</div>
+			</div>
+		</div>
+
+		<div class="col-md-9">
+		<table>
+			<tr>
+				<td>Nombre</td>
+				<td>Primer Apellido</td>
+				<td>Segundo Apellido</td>
+				<td>Ciclo</td>
+				<td>Nombre de la empresa</td>
+			</tr>
+			{% for alumno in alumnos %}
+				<tr>
+					<td>{{ alumno.nombre }}</td>
+					<td>{{ alumno.apellido1 }}</td>
+					<td>{{ alumno.apellido2 }}</td>
+					<td>{{ alumno.ciclo }}</td>
+					<td>{{ alumno.empresa.nombre }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+		</div>
+
+		</div>
+	</body>
+</html>
