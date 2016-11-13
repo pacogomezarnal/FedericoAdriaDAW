@@ -1,7 +1,5 @@
 <html>
 	<head>
-		<title>Todos los alumnos</title>
-		<meta charset="UTF-8">
 		<link href="{{ asset('/css/estilos.css') }}" rel="stylesheet" />
 		<link href="{{ asset('/css/menu.css') }}" rel="stylesheet" />
 		<link href="{{ asset('/css/grid12.css') }}" rel="stylesheet" />
@@ -9,39 +7,8 @@
 
 	<body>
 		<div class="col">
-
-		<div class="col-md-3">
-			<div>
-  	<div id="cabecera">
-   	 <h1>fct</h1>
-   		 Gestor de prácticas en empresa
-  	</div>
-  
-  	<div id="principal">
-    <h3>Principal</h3>
-    <div>Listado de asignaciones</div>
-        <div>Asignación</div>
-    <h3>Maestros</h3>
-		<div id="empresa">Empresa</div>
-    		<ul>
-      			<li>ListadoEmpresas</li>
-      			<li>NuevaEmpresa</li>
-		   </ul>
-				<div>Alumnos</div>
-    		<ul>
-      			<li>ListadoAlumnos</li>
-    		</ul>
-				<div>Tutores</div>
-
-        		<h3>Recursos</h3>
-				  <div>Recursos</div>
-
-  				</div>
-			</div>
-		</div>
-
-		<div class="col-md-9">
 		<table>
+
 			<tr>
 				<td>Nombre</td>
 				<td>Primer Apellido</td>
@@ -49,6 +16,7 @@
 				<td>Ciclo</td>
 				<td>Nombre de la empresa</td>
 			</tr>
+			
 			{% for alumno in alumnos %}
 				<tr>
 					<td>{{ alumno.nombre }}</td>
@@ -62,5 +30,5 @@
 		</div>
 
 		</div>
-	</body>
-</html>
+		</body>
+	</html>
