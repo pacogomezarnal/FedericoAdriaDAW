@@ -21,3 +21,8 @@ empresa_msgExito:
 alumnosAll:
   path:       /alumno/all
   defaults: { _controller: gestorBundle:alumno:alumnosAll }
+
+jsonempresas:
+    path: /empresas
+    defaults: {_controller: gestorBundle:empresasAPI:generarJSON}
+    methods: [GET]
