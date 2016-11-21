@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 
-class empresaType extends AbstractType
+class profesorType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder

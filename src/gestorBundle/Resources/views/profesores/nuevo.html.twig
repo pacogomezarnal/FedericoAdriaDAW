@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<!--En head pondremos el título de la página, el tipo de carácteres usados y un enlace a una hoja de estilos-->
+		<title>Nuevo profesor</title>
+		<meta charset="UTF-8">
+		<link href="{{ asset('/css/estilos.css') }}" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="contenedorForm">
+		<!--Llamamos al formulario que pasamos al twig desde el controlador y lo mostramos-->
+			{{form(formularioProfesor)}}
+		</div>
+	</body>
+</html>

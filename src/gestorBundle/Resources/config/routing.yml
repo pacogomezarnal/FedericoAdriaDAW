@@ -34,9 +34,18 @@ todosProfesores:
     path: /profesores/all
     defaults: {_controller: gestorBundle:profesores:all}
 
+
+
 #creamos una ruta para poder mostrar todos los profesores,llamaremos al controlador profesores y dentro
 #de el la función All
 
 nuevoProfesor:
     path: /profesores/new
     defaults: {_controller: gestorBundle:profesores:nuevoProfesor}
+
+
+#creamos una ruta para poder mostrar un fichero JSON que va a contener a todos los profesores
+
+profesorJSON:
+    path: /profesores/JSON
+    defaults: {_controller: gestorBundle:profesores:JSON}

@@ -5,7 +5,12 @@ namespace gestorBundle\Controller;
 #Llamamos a diferentes varibles para poder usarlas en el controlador
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use gestorBundle\Entity\profesor;
+
+//llamamos a el formulario para crear un nuevo profesor
+use gestorBundle\Form\profesorType;
 use Symfony\Component\HttpFoundation\Request;
+
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 #creamos una clase llamada profesoresController
 class profesoresController extends Controller
@@ -24,6 +29,9 @@ class profesoresController extends Controller
     	#este array se llamará en el fichero HTML mediante profesores
         return $this->render('gestorBundle:profesores:all.html.twig',array("profesores"=>$profesores));
     }
+
+
+
 
     public function nuevoProfesorAction(Request $request)//Función llamada nuevoProfesor
     {
@@ -48,6 +56,45 @@ class profesoresController extends Controller
     		//si todo lo anterior ha funcionado, iremos a la ruta que muestra una tabla con todos los profesores
     		return $this->redirectToRoute('todosProfesores');
     	}
-    	return $this->render('gestorBundle:empresa:nuevaEmpresa.html.twig',array("form"=>$form->createView() ));
+    	return $this->render('gestorBundle:profesores:nuevo.html.twig',array("formularioProfesor"=>$form->createView() ));
     }
+
+
+    //función para convertir los datos de cada profesor en un array
+    private function serializeProfesor(Profesor $profesor)
+    {
+	//guardamos los datos de cada profesor en un array para que el JSON sea más legible
+      return array(
+          'identificador' => $profesor->getId(),
+          'nombre' => $profesor->getNombre(),
+          'apellidos' => $profesor->getApellidos(),
+          'departamento' => $profesor->getDepartamento(),
+      );
+    }
+
+
+    //mediante este comando vamos a generar un JSON con los datos de todos los profesores
+	function JSONAction()
+	{
+		//obtenemos la tabla profesor
+    	$repository= $this->getDoctrine()->getRepository('gestorBundle:profesor');
+
+    	//guardamos todos los profesores encontrados
+    	$profesores = $repository->findAll();
+
+    	//preparamos una función $data que va a contener en un futuro a todos los profesores
+       $data=array('profesores'=>array());
+
+       //para cada fila, es decir, para cada profesor vamos a realizar la siguiente acción
+       foreach ($profesores as $profesor) {
+
+       	//guardamos en $data los datos de la fila en forma de un array
+       	$data['profesores'][]=$this->serializeProfesor($profesor);
+       }
+
+       //mostramos un JSON con los datos de los profesores, mostramos el código 200 para saber que todo ha ido correctamente
+       $response=new JsonResponse($data, 200);
+       return $response;
+     }
+
 }
