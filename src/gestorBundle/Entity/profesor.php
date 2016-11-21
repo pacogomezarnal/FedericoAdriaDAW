@@ -42,6 +42,9 @@ class profesor
      */
     private $departamento;
 
+    //un profesor puede tener muchos alumnos, queremos la variable profesor de la entidad alumnos
+    //y ponemos la variable $alumnos para identificar un alumno
+    
     /**
      *@ORM\OneToMany(targetEntity="alumnos", mappedBy="profesor")
     */

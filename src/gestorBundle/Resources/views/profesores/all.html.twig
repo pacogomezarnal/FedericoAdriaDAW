@@ -1,0 +1,30 @@
+<html>
+	<head>
+	<!--En head pondremos el título de la página, el tipo de carácteres usados y un enlace a una hoja de estilos-->
+		<title>Todos los profesores</title>
+		<meta charset="UTF-8">
+		<link href="{{ asset('/css/estilos.css') }}" rel="stylesheet" />
+	</head>
+	
+	<body>
+	<!--Creamos una tabla para mostrar a todos los profesores-->
+		<table>
+		<!--En la primera fila pondremos los datos que queremos obtener de los profesores-->
+			<tr>
+				<td>Id</td>
+				<td>Nombre</td>
+				<td>Apellidos</td>
+				<td>Departamento</td>
+			</tr>
+			<!--Para el array profesores, por cada profesor que haya dentro, generaremos una fila con sus datos-->
+			{% for profesor in profesores %}
+				<tr>
+					<td>{{ profesor.id }}</td>
+					<td>{{ profesor.nombre }}</td>
+					<td>{{ profesor.apellidos }}</td>
+					<td>{{ profesor.departamento }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

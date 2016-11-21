@@ -27,6 +27,16 @@ jsonempresas:
     defaults: {_controller: gestorBundle:empresasAPI:generarJSON}
     methods: [GET]
 
+#creamos una ruta para poder mostrar todos los profesores,llamaremos al controlador profesores y dentro
+#de el la función All
+
 todosProfesores:
     path: /profesores/all
     defaults: {_controller: gestorBundle:profesores:all}
+
+#creamos una ruta para poder mostrar todos los profesores,llamaremos al controlador profesores y dentro
+#de el la función All
+
+nuevoProfesor:
+    path: /profesores/new
+    defaults: {_controller: gestorBundle:profesores:nuevoProfesor}

@@ -55,7 +55,11 @@ class alumnos
     */
     private $empresa;
 
-
+    //Muchos alumnos van an tener un profesor,llamamos a la entidad llamada profesor y nosotros le
+    //vamos a pasar una variable llamada alumnos
+    //apuntaremos a la id del profesor para saber a que profesor se refiere el profesor_id
+    //de un alumno en concreto
+    
     /**
      * @ORM\ManyToOne(targetEntity="profesor", inversedBy="alumnos")
      * @ORM\JoinColumn(name="profesor_id", referencedColumnName="id")
