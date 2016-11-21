@@ -26,3 +26,7 @@ jsonempresas:
     path: /empresas
     defaults: {_controller: gestorBundle:empresasAPI:generarJSON}
     methods: [GET]
+
+todosProfesores:
+    path: /profesores/all
+    defaults: {_controller: gestorBundle:profesores:all}

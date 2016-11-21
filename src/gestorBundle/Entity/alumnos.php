@@ -55,6 +55,13 @@ class alumnos
     */
     private $empresa;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="profesor", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="profesor_id", referencedColumnName="id")
+    */
+    private $profesor;
+
     /**
      * Get id
      *
@@ -183,5 +190,29 @@ class alumnos
     public function getEmpresa()
     {
         return $this->empresa;
+    }
+
+    /**
+     * Set profesor
+     *
+     * @param \gestorBundle\Entity\profesor $profesor
+     *
+     * @return alumnos
+     */
+    public function setProfesor(\gestorBundle\Entity\profesor $profesor = null)
+    {
+        $this->profesor = $profesor;
+
+        return $this;
+    }
+
+    /**
+     * Get profesor
+     *
+     * @return \gestorBundle\Entity\profesor
+     */
+    public function getProfesor()
+    {
+        return $this->profesor;
     }
 }
